@@ -1,5 +1,5 @@
-# NLP models
-These are a couple of NLP models coded in PyTorch and PyTorch Lighning. 
+# RNN models
+These are a couple of RNN models coded in PyTorch and PyTorch Lighning. 
 I coded these models to learn and to show some implementations of PyTorch lightning.
 
 I'm going to be using the FashionMNIST dataset to train a classifyer using theses architectures.
@@ -12,5 +12,8 @@ I'm going to be using the FashionMNIST dataset to train a classifyer using these
 * Not sure
 
 ## How to download
+
+```git clone https://github.com/jaimebw/chill_rnns.git```
+
 
 
