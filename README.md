@@ -13,7 +13,9 @@ I'm going to be using the FashionMNIST dataset to train a classifyer using these
 
 ## How to download
 
-```git clone https://github.com/jaimebw/chill_rnns.git```
+```bash
+git clone https://github.com/jaimebw/chill_rnns.git
+```
 
 
 
