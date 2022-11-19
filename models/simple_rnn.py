@@ -32,8 +32,6 @@ class SimpleRNN(nn.Module):
     def forward(self,x):
         h, _ = self.rnn(x) # x = (seq_len,batch_size,input_size)
         x = self.fc(h)
-        x = self.relu(x)
-        x = self.fc(h)
         return x.softmax(dim = 1) # softmax for classification
 
 class LitSimpleRNN(pl.LightningModule):
@@ -55,14 +53,10 @@ class LitSimpleRNN(pl.LightningModule):
 
     
     def training_step(self, batch, batch_idx):
-        # training_step defines the train loop.
-        # it is independent of forward
         x, y = batch
         x = x.permute(1,0,2,3)
         x = x.reshape(1,64,28*28)
         y = self.hot_encode(y,10)
-        # y = F.one_hot(y, num_classes=10).view(10,64)
-        # y = y.float()
         y = y.reshape(10,1,64)
         y = y.permute(1,2,0)
         pred = self.RNN(x)
